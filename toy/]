@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct _list{
+	char[13] phoneNumber;
+	char *personName;
+	struct _list *next;
+}list;
+
+void initNode(list *l){
+	l->phoneNumber = "";
+	l->personName = NULL;
+	l->next = NULL;
+}
+
+void addNode(list *l, char *phoneNumber, char *personName){
+	list temp = l;
+	list *newNode;
+
+	newNode = (list*)malloc(sizeof(list)*1);
+	newNode->phoneNumber = phoneNumber;
+	newNode->personName = personName;
+	newNode->next = NULL;
+
+	while(temp->next != NULL){
+		temp = temp->next;
+	}
+
+	temp->next = newNode;
+}
+
+void searchNode(
+
+void deleteList(list *l, char *personName){
+
+}
+	
+
+void showList(list *l){
+	list *temp;
+	temp = l;
+	temp = temp->next;
+	while(temp->next != NULL){
+		printf("phoneNumber : %s / name : %s\n", temp->phoneNumber, temp->personName);
+		temp = temp->next;
+	}
+}
+
+
+int main(){
+	
+	return 0;
+}
