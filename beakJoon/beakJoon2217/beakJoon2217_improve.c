@@ -19,12 +19,10 @@ int compareGreater(const void *a, const void *b){
 int main(){
 	int N;
 	int *maxWeightPerRope;
-	int *maxWeight;
 
 	scanf("%d", &N);
 
 	maxWeightPerRope = (int*)malloc(N * sizeof(int));
-	maxWeight = (int*)malloc(N * sizeof(int));
 
 	for(int i = 0; i < N; ++i){
 		int weight;
@@ -34,20 +32,16 @@ int main(){
 
 	qsort(maxWeightPerRope, N, sizeof(int), compareGreater);
 
-	for(int i = 0; i < N; ++i){
-		maxWeight[i] = maxWeightPerRope[i] * (i +1);
-	}
-
-	int max = maxWeight[0];
+	int max = maxWeightPerRope[0];
 	for(int i = 1; i < N; ++i){
-		if(maxWeight[i] > max){
-			max = maxWeight[i];
+		int maxWeightSum = maxWeightPerRope[i] * (i+1);
+		if(maxWeightSum > max){
+			max = maxWeightSum;
 		}
 	}
 
 	printf("%d", max);
 
 	free(maxWeightPerRope);
-	free(maxWeight);
 	return 0;
 }
