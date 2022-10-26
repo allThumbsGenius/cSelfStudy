@@ -8,7 +8,7 @@ int main(){
 
 	scanf("%d", &n);
 
-	distanceBetweenCity = (long long int*)malloc(n - 1 * sizeof(long long int));
+	distanceBetweenCity = (long long int*)malloc((n - 1) * sizeof(long long int));
 
 	for(int i = 0; i < n - 1; ++i){
 		scanf("%lld", &distanceBetweenCity[i]);

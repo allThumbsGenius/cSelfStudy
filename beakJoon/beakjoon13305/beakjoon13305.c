@@ -8,7 +8,7 @@ int main(){
 
 	scanf("%d", &n);
 
-	distanceBetweenCity = (int*)malloc(n - 1 * sizeof(int));
+	distanceBetweenCity = (int*)malloc((n - 1) * sizeof(int));
 	oilPricePerCity = (int*)malloc(n * sizeof(int));
 
 	for(int i = 0; i < n - 1; ++i){
@@ -27,7 +27,7 @@ int main(){
 		totalPrice += minPrice * distanceBetweenCity[i];
 	}
 
-	printf("%lld", totalPrice);
+	printf("%lld\n", totalPrice);
 
 	free(distanceBetweenCity);
 	free(oilPricePerCity);
