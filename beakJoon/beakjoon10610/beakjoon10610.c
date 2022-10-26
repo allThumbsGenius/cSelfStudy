@@ -17,7 +17,7 @@ int compareLess(const void *a, const void *b){
 }
 
 int main(){
-	char n[10001];
+	char n[100001];
 
 	gets(n);
 
