@@ -1,0 +1,21 @@
+WhyWrongLogic?{
+	because{
+		this can't calculate when S - sum == 0{
+			example{
+				if S = 55;
+				when n == 10{
+					sum == 55 so S - sum == 0;
+				}
+				it seems there is no wrong but when n == 9{
+					sum == 45 so S - sum == 10;
+					and ++n comes first and then S - sum < n;
+					then S - sum == 10, n == 10 so "for loop" is endded;
+					and it prints n-1 {
+						so it prints 9 not 10;
+						now there is a problem!;
+					}
+				}
+			}
+		}
+	}
+}
