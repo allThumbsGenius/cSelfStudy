@@ -2,7 +2,7 @@
 
 int main(){
 	int sum = 0;
-	int S;
+	unsigned int S;
 
 	scanf("%d", &S);
 
