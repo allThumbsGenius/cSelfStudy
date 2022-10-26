@@ -9,7 +9,6 @@ int main(){
 	int n = 1;
 	for(;;++n){
 		sum += n;
-		fprintf(stderr, "n = %d, S-sum = %d\n", n, S-sum);
    		if(S - sum <= n){
 			break;
 		}
