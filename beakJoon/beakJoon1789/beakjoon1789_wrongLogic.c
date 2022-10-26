@@ -7,15 +7,12 @@ int main(){
 	scanf("%d", &S);
 
 	int n = 1;
-	for(;;++n){
+	for(;S - sum > n; ++n){
 		sum += n;
 		fprintf(stderr, "n = %d, S-sum = %d\n", n, S-sum);
-   		if(S - sum <= n){
-			break;
-		}
 	}
 
-	printf("%d", n);
+	printf("%d", n - 1);
 
 	return 0;
 }
