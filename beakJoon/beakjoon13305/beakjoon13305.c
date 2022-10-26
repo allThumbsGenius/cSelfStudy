@@ -19,8 +19,8 @@ int main(){
 	}
 	
 	int minPrice = oilPricePerCity[0];
-	int totalPrice = 0;
-	for(int i = 0; i < n -1; ++i){
+	long long int totalPrice = 0;
+	for(int i = 0; i < n - 1; ++i){
 		if(minPrice > oilPricePerCity[i]){
 			minPrice = oilPricePerCity[i];
 		}

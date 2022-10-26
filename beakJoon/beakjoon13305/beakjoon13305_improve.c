@@ -16,7 +16,7 @@ int main(){
 
 	scanf("%d", &oilPricePerCity);
 	int minPrice = oilPricePerCity;
-	int totalPrice = 0;
+	long long int totalPrice = 0;
 	for(int i = 0; i < n -1; ++i, scanf("%d", &oilPricePerCity)){
 		if(minPrice > oilPricePerCity){
 			minPrice = oilPricePerCity;
