@@ -3,15 +3,15 @@
 
 int main(){
 	int n;
-	int *distanceBetweenCity;
+	long long int *distanceBetweenCity;
 	int oilPricePerCity;
 
 	scanf("%d", &n);
 
-	distanceBetweenCity = (int*)malloc(n - 1 * sizeof(int));
+	distanceBetweenCity = (long long int*)malloc(n - 1 * sizeof(long long int));
 
 	for(int i = 0; i < n - 1; ++i){
-		scanf("%d", &distanceBetweenCity[i]);
+		scanf("%lld", &distanceBetweenCity[i]);
 	}
 
 	scanf("%d", &oilPricePerCity);
@@ -24,7 +24,7 @@ int main(){
 		totalPrice += minPrice * distanceBetweenCity[i];
 	}
 
-	printf("%d", totalPrice);
+	printf("%lld", totalPrice);
 
 	free(distanceBetweenCity);
 

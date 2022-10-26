@@ -27,7 +27,7 @@ int main(){
 		totalPrice += minPrice * distanceBetweenCity[i];
 	}
 
-	printf("%d", totalPrice);
+	printf("%lld", totalPrice);
 
 	free(distanceBetweenCity);
 	free(oilPricePerCity);
