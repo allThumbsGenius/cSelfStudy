@@ -20,7 +20,7 @@ int main(){
 		
 		int count = 1;
 		int min = ranks[1];
-		for(int j = 2; j < candidateCount; j++){
+		for(int j = 2; j <= candidateCount; j++){
 			if(min > ranks[j]){
 				count++;
 				min = ranks[j];
