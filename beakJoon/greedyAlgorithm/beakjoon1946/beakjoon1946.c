@@ -25,8 +25,8 @@ int main(){
 	int testcaseCount;
 	int candidateCount;
 
-	int countPerTest[10000];
-	grades grade[10000];
+	int countPerTest[100000];
+	grades grade[100000];
 	
 	scanf("%d", &testcaseCount);
 
