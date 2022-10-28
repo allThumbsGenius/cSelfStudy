@@ -15,7 +15,8 @@ int main(){
 	
 	for(int i = 9; i >= 0; --i){
 		for(int j = digitNumberCount[i]; j > 0; --j){
-			printf("%d", i);
+			ch = i + '0';
+			putchar(ch);
 		}
 	}
 
