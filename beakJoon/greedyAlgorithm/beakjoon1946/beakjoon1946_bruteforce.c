@@ -16,7 +16,6 @@ int main(){
 	scanf("%d", &testcaseCount);
 
 	for(int i = 0; i < testcaseCount; i++){
-
 		scanf("%d", &candidateCount);
 		
 		for(int j = 0; j < candidateCount; j++){

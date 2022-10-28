@@ -25,7 +25,7 @@ int main(){
 	int testcaseCount;
 	int candidateCount;
 
-	int countPerTest[100000];
+	int countPerTest[20];
 	grades grade[100000];
 	
 	scanf("%d", &testcaseCount);
@@ -39,16 +39,15 @@ int main(){
 		
 		qsort(grade, candidateCount, sizeof(grades), compare);
 		
-		int count = 0;
+		int count = 1;
+		int min = grade[0].interview;
 		for(int j = 1; j < candidateCount; j++){
-			for(int k = j - 1; k >= 0; k--){
-				if(grade[j].interview > grade[k].interview){
-					count++;
-					break;
-				}
+			if(min > grade[j].interview){
+				count++;
+				min = grade[j].interview;
 			}
 		}
-		countPerTest[i] = candidateCount - count;
+		countPerTest[i] = count;
 	}
 
 	for(int i = 0; i < testcaseCount; i++){
