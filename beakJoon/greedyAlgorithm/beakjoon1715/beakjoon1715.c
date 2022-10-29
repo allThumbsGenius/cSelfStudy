@@ -21,38 +21,43 @@ int main(){
 		int min[2];
 		int tempIndex[2] = {-1, -1};
 
-		min[0] = card[0];
 		
 		int j = 0;
+		min[0] = card[0];
 		for(j = 1; j < N; j++){
 			if(min[0] > card[j]){
 				min[0] = card[j];
 				tempIndex[0] = j;
-				card[j] = IS_USED;
 			}
 		}
 		if(tempIndex[0] == -1){
 			card[0] = IS_USED;
 			tempIndex[0] = 0;
 		}
+		card[tempIndex[0]] = IS_USED;
 
 		min[1] = card[0];
-		for(j = 0; j < N; j++){
+		for(j = 1; j < N; j++){
 			if(min[1] > card[j]){
 				min[1] = card[j];
 				tempIndex[1] = j;
-				card[j] = IS_USED;
 			}
 		}
+		if(tempIndex[1] == -1){
+			card[0] = IS_USED;
+			tempIndex[1] = 0;
+		}
+		card[tempIndex[1]] = IS_USED;
 
 		sum += (min[0] + min[1]);
 
 		if(tempIndex[0] > tempIndex[1]){
-			card[tempIndex[1]] = sum;
+			card[tempIndex[1]] = min[0] + min[1];
 		}
 		else{
-			card[tempIndex[0]] = sum;
+			card[tempIndex[0]] = min[0] + min[1];
 		}
+
 	}
 	printf("%d", sum);
 
