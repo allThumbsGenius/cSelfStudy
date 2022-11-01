@@ -41,12 +41,11 @@ void heapInsert(Heap *heap, int value){
 	int index = ++heap->size;
 	int parent = index / 2;
 
-	heap->array[index] = value;
-	while(heap->array[index] < heap->array[parent]){
-		int temp = heap->array[index];
+	while((index != 1) && (value < heap->array[parent])){
 		heap->array[index] = heap->array[parent];
-		heap->array[parent] = temp;
+		index = parent;
 	}
+	heap->array[index] = value;
 }
 
 int main(){
@@ -82,10 +81,10 @@ int main(){
 		min[1] = minExtract(heap);
 		heapInsert(heap, min[0] + min[1]);
 		sum += (min[0] + min[1]);
-
-
 	}
 	printf("%d", sum);
+
+	free(heap);
 
 	return 0;
 }
