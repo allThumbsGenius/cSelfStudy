@@ -50,7 +50,7 @@ void heapInsert(Heap *heap, int value){
 
 int main(){
 	int N;
-	int sum = 0;
+	long long int sum = 0;
 	Heap *heap;
 	
 	heap = (Heap *)malloc(sizeof(Heap) * 1);
@@ -82,7 +82,7 @@ int main(){
 		heapInsert(heap, min[0] + min[1]);
 		sum += (min[0] + min[1]);
 	}
-	printf("%d", sum);
+	printf("%lld", sum);
 
 	free(heap);
 
