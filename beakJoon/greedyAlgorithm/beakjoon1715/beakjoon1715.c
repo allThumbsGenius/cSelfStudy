@@ -64,7 +64,7 @@ int main(){
 	}
 	
 	if(N == 1){
-		printf("%d", heap->array[1]);
+		printf("0");
 		return 0;
 	}
 
