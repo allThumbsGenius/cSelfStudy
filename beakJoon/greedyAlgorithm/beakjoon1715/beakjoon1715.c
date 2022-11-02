@@ -14,7 +14,7 @@ void minHeapify(Heap *heap, int index){
 	int smallest = index;
 	int leftChild = index * 2;
 	int rightChild = index * 2 + 1;
-	
+
 	if(leftChild <= heap->size && heap->array[smallest] > heap->array[leftChild]){
 		smallest = leftChild;
 	}
@@ -44,6 +44,7 @@ void heapInsert(Heap *heap, int value){
 	while((index != 1) && (value < heap->array[parent])){
 		heap->array[index] = heap->array[parent];
 		index = parent;
+		parent /= 2;
 	}
 	heap->array[index] = value;
 }
