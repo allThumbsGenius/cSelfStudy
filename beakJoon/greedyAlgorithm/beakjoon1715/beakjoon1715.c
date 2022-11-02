@@ -31,14 +31,14 @@ void minHeapify(Heap *heap, int index){
 
 int minExtract(Heap *heap){
 	int ret = heap->array[1];
-	heap->array[1] = heap->array[heap->size--];
+	heap->array[1] = heap->array[(heap->size)--];
 	minHeapify(heap, 1);
 
 	return ret;
 }
 
 void heapInsert(Heap *heap, int value){
-	int index = ++heap->size;
+	int index = ++(heap->size);
 	int parent = index / 2;
 
 	while((index != 1) && (value < heap->array[parent])){
@@ -76,7 +76,6 @@ int main(){
 
 	for(int i = 0; i < N - 1; i++){
 		int min[2];
-		int j;
 		
 		min[0] = minExtract(heap);
 		min[1] = minExtract(heap);
