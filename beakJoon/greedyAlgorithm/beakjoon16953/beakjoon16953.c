@@ -12,7 +12,7 @@ int main(){
 			count++;
 			continue;
 		}
-		else if((A > B) || (B % 10) % 2 != 0){
+		else if((A > B) || B % 2 != 0){
 			printf("-1");
 			return 0;
 		}
