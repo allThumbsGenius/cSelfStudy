@@ -29,7 +29,7 @@ int main(){
 	int n;
 	unsigned int alphabet[26] = {0};
 	char inputs[8];
-	unsigned int answer = 0;
+	long long int answer = 0;
 
 	scanf("%d", &n);
 	for(int i = 0; i < n; i++){
@@ -40,14 +40,18 @@ int main(){
 		}
 	}
 
-
 	qsort(alphabet, 26, sizeof(unsigned int), compare);
+
+	for(int i = 0; i < 26; i++){
+		fprintf(stderr, "%d ", alphabet[i]);
+	}
+	fprintf(stderr, "\n");
 
 	for(int i = 9, j = 0; i > 0 ; i--, j++){
 		answer += (alphabet[j] * i);
 	}
 
-	printf("%d", answer);
+	printf("%lld", answer);
 
 	return 0;
 }
