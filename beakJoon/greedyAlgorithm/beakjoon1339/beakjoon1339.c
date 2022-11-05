@@ -28,7 +28,7 @@ unsigned int getPow(int p, int k){
 int main(){
 	int n;
 	unsigned int alphabet[26] = {0};
-	char inputs[8];
+	char inputs[9];
 	long long int answer = 0;
 
 	scanf("%d", &n);
