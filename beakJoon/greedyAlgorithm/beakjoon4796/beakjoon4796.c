@@ -7,7 +7,7 @@ int main(){
 
 	while(scanf("%d%d%d", &l, &p, &v) && l !=0 && p != 0 && v !=0){
 		answer = 0;
-		answer +=  (v / p * l);
+		answer +=  ((v / p) * l);
 		if( v % p <= l){
 			answer += v % p;
 		}
@@ -15,7 +15,7 @@ int main(){
 			answer += l;
 		}
 
-		printf("Case %d: %d\n", caseNum, answer);
+		printf("Case %d: %d\n", caseNum++, answer);
 	}
 
 	return 0;
