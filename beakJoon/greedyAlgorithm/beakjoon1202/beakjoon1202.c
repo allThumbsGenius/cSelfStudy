@@ -6,7 +6,7 @@ typedef struct _JewelInfo{
 	int price;
 }JewelInfo;
 
-int compareJewelWeight(const void *a, const void *b){
+int compareJewelPrice(const void *a, const void *b){
 	int pa = ((JewelInfo*)a)->price;
 	int pb = ((JewelInfo*)b)->price;
 
@@ -57,7 +57,7 @@ int main(){
 		bagIsFull[i] = BAG_IS_EMPTY;
 	}
 
-	qsort(jewelInfoArray, jewelCount, sizeof(JewelInfo), compareJewelWeight);
+	qsort(jewelInfoArray, jewelCount, sizeof(JewelInfo), compareJewelPrice);
 	qsort(bagWeightArray, bagCount, sizeof(int), compareBagWeight);
 
 	for(int i = 0; i < jewelCount; i++){
