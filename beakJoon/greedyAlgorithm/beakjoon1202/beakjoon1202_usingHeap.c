@@ -84,7 +84,7 @@ int main(){
 	int jewelCount, bagCount;
 	JewelInfo *jewelInfoArray;
 	int *bagWeightArray;
-	int answer = 0;
+	long long int answer = 0;
 
 	scanf("%d%d", &jewelCount, &bagCount);
 	jewelInfoArray = (JewelInfo*)malloc(jewelCount * sizeof(JewelInfo));
@@ -106,11 +106,13 @@ int main(){
 			heapInsert(jewelInfoArray[j].price);
 			j++;
 		}
-		answer += getMaxFromHeap();
+		if(heapSize != 0){
+			answer += getMaxFromHeap();
+		}
 	}
 
 
-	printf("%d", answer);
+	printf("%lld", answer);
 
 	free(bagWeightArray);
 	free(jewelInfoArray);
