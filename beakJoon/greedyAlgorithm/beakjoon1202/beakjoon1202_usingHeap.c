@@ -54,7 +54,6 @@ int getMaxFromHeap(){
 	int returnValue = HEAP[1];
 	HEAP[1] = HEAP[heapSize--];
 
-	int element = HEAP[1];
 	int index = 1;
 	while(index <= heapSize){
 		int biggest = index;
@@ -66,14 +65,15 @@ int getMaxFromHeap(){
 		}
 
 		if(biggest != index){
+			int temp = HEAP[index];
 			HEAP[index] = HEAP[biggest];
+			HEAP[biggest] = temp;
 			index = biggest;
 		}
 		if(biggest == index){
 			break;
 		}
 	}
-	HEAP[index] = element;
 
 	return returnValue;
 }
