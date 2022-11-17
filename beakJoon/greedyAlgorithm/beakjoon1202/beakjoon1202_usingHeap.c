@@ -102,7 +102,7 @@ int main(){
 
 	int j = 0;
 	for(int i = 0; i < bagCount; i++){
-		while(jewelInfoArray[j].weight <= bagWeightArray[i]){
+		while((j < jewelCount) && (jewelInfoArray[j].weight <= bagWeightArray[i])){
 			heapInsert(jewelInfoArray[j].price);
 			j++;
 		}
