@@ -60,7 +60,7 @@ int getMaxFromHeap(){
 		if((index * 2 <= heapSize) && (HEAP[biggest] <= HEAP[index * 2])){
 			biggest = index * 2;
 		}
-		else if((index * 2 + 1 <= heapSize) && (HEAP[biggest] < HEAP[index * 2 + 1])){
+		if((index * 2 + 1 <= heapSize) && (HEAP[biggest] < HEAP[index * 2 + 1])){
 			biggest = index * 2 + 1;
 		}
 
