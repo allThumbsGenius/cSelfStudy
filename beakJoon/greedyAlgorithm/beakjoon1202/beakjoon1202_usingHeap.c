@@ -2,13 +2,13 @@
 #include<stdlib.h>
 
 typedef struct _JewelInfo{
-	long long int weight;
+	int weight;
 	int price;
 }JewelInfo;
 
 int compareJewelWeight(const void *a, const void *b){
-	long long int pa = ((JewelInfo*)a)->weight;
-	long long int pb = ((JewelInfo*)b)->weight;
+	int pa = ((JewelInfo*)a)->weight;
+	int pb = ((JewelInfo*)b)->weight;
 
 	if(pa > pb){
 		return 1;
@@ -22,8 +22,8 @@ int compareJewelWeight(const void *a, const void *b){
 }
 
 int compareBagWeight(const void *a, const void *b){
-	int wa = *((long long int*)a);
-	int wb = *((long long int*)b);
+	int wa = *((int*)a);
+	int wb = *((int*)b);
 
 	if(wa > wb){
 		return 1;
@@ -83,22 +83,22 @@ int getMaxFromHeap(){
 int main(){
 	int jewelCount, bagCount;
 	JewelInfo *jewelInfoArray;
-	long long int *bagWeightArray;
+	int *bagWeightArray;
 	long long int answer = 0;
 
 	scanf("%d%d", &jewelCount, &bagCount);
 	jewelInfoArray = (JewelInfo*)malloc(jewelCount * sizeof(JewelInfo));
-	bagWeightArray = (long long int*)malloc(bagCount * sizeof(long long int));
+	bagWeightArray = (int*)malloc(bagCount * sizeof(int));
 
 	for(int i = 0; i < jewelCount; i++){
-		scanf("%lld%d", &jewelInfoArray[i].weight, &jewelInfoArray[i].price);
+		scanf("%d%d", &jewelInfoArray[i].weight, &jewelInfoArray[i].price);
 	}
 	for(int i = 0; i < bagCount; i++){
-		scanf("%lld", &bagWeightArray[i]);
+		scanf("%d", &bagWeightArray[i]);
 	}
 
 	qsort(jewelInfoArray, jewelCount, sizeof(JewelInfo), compareJewelWeight);
-	qsort(bagWeightArray, bagCount, sizeof(long long int), compareBagWeight);
+	qsort(bagWeightArray, bagCount, sizeof(int), compareBagWeight);
 
 	int j = 0;
 	for(int i = 0; i < bagCount; i++){
