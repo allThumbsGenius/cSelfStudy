@@ -57,7 +57,7 @@ long long int getMaxFromHeap(){
 	int index = 1;
 	while(index <= heapSize){
 		int biggest = index;
-		if((index * 2 <= heapSize) && (HEAP[biggest] <= HEAP[index * 2])){
+		if((index * 2 <= heapSize) && (HEAP[biggest] < HEAP[index * 2])){
 			biggest = index * 2;
 		}
 		if((index * 2 + 1 <= heapSize) && (HEAP[biggest] < HEAP[index * 2 + 1])){
@@ -70,7 +70,7 @@ long long int getMaxFromHeap(){
 			HEAP[biggest] = temp;
 			index = biggest;
 		}
-		if(biggest == index){
+		else{
 			break;
 		}
 	}
@@ -87,8 +87,8 @@ int main(){
 	long long int answer = 0;
 
 	scanf("%lld%lld", &jewelCount, &bagCount);
-	jewelInfoArray = (JewelInfo*)malloc(jewelCount * sizeof(JewelInfo) + 1);
-	bagWeightArray = (long long int*)malloc(bagCount * sizeof(long long int) + 1);
+	jewelInfoArray = (JewelInfo*)malloc(jewelCount * sizeof(JewelInfo));
+	bagWeightArray = (long long int*)malloc(bagCount * sizeof(long long int));
 
 	for(int i = 0; i < jewelCount; i++){
 		scanf("%lld%lld", &jewelInfoArray[i].weight, &jewelInfoArray[i].price);
