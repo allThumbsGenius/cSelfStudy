@@ -107,7 +107,7 @@ int main(){
 			j++;
 		}
 		if(heapSize != 0){
-			answer += (long long int)getMaxFromHeap();
+			answer += getMaxFromHeap();
 		}
 	}
 

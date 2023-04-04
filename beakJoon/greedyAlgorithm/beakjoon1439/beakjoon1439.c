@@ -2,7 +2,6 @@
 
 int main(){
 	char S[1000001];
-	int oneOrZero;
 	int countChange = 0;
 
 	gets(S);
