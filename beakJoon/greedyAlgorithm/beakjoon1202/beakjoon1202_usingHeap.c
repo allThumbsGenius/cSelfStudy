@@ -36,13 +36,13 @@ int compareBagWeight(const void *a, const void *b){
 	}
 }
 
-int HEAP[300001];
+long long int HEAP[300001];
 int heapSize = 0;
 
 void heapInsert(int element){
 	int tempIndex = ++heapSize;
 
-	while(tempIndex/2 != 0 && (element > HEAP[tempIndex/2])){
+	while(tempIndex != 1 && (element > HEAP[tempIndex/2])){
 		HEAP[tempIndex] = HEAP[tempIndex/2];
 		tempIndex /= 2;
 	}
@@ -57,7 +57,7 @@ int getMaxFromHeap(){
 	int index = 1;
 	while(index <= heapSize){
 		int biggest = index;
-		if((index * 2 <= heapSize) && (HEAP[biggest] <= HEAP[index * 2])){
+		if((index * 2 <= heapSize) && (HEAP[biggest] < HEAP[index * 2])){
 			biggest = index * 2;
 		}
 		if((index * 2 + 1 <= heapSize) && (HEAP[biggest] < HEAP[index * 2 + 1])){
@@ -70,7 +70,7 @@ int getMaxFromHeap(){
 			HEAP[biggest] = temp;
 			index = biggest;
 		}
-		if(biggest == index){
+		else{
 			break;
 		}
 	}
